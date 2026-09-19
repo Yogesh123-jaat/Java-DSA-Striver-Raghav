@@ -10,7 +10,7 @@ public class CommonElements
 
 	}
 	
-	public static ArrayList<Integer> commonElements(int[] a , int[] b)
+	public static ArrayList<Integer> commonElements(int[] a , int[] b)   // TC : O(nlogn)
 	{
 		ArrayList<Integer> ans = new ArrayList<>();
 		
