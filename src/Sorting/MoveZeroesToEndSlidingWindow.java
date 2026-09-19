@@ -7,7 +7,7 @@ public class MoveZeroesToEndSlidingWindow
 		int arr[] = {0,0,8,0,-2,0,5,7,6,1,0,3,4};
 		
 		print(arr);
-		pushZerosToEnd(arr);   // TC : O(n^2)
+		pushZerosToEnd(arr);   // TC : O(n)
 		print(arr);
 	}
 	
