@@ -9,9 +9,9 @@ public class TwoSumByTwoPointerApproach
 		
 	}
 	
-	public static boolean twoSum(int[] arr , int target)   // TC : O(n logn)
+	public static boolean twoSum(int[] arr , int target)   // TC : O(n logn)  SC : O(n)
 	{
-		Arrays.sort(arr);
+		Arrays.sort(arr);  // due to this space complexity
 		int n = arr.length;
 		
 		int i = 0;
