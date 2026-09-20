@@ -6,7 +6,7 @@ public class MergeSortingTechnique
 	{
 		int[] arr = {8,7,6,4,5,2,1,3,4,9,-5,2,-8,9};
 		
-		mergeSort(arr);  // TC : O(nlogn) SC : O(n)
+		mergeSort(arr);  // TC : O(nlogn) SC : O(nlogn)
 		print(arr);
 	}
 	
@@ -27,15 +27,20 @@ public class MergeSortingTechnique
 		
 		if(n == 1) return;
 		
+//		step 1 : create two new empty arrays of size n/2
 		int[] a = new int[n/2];
 		int[] b = new int[n - n/2];
 		
+//		step 2: copy passte arr into a and b
 		for(int i = 0; i < a.length; i++) a[i] = arr[idx++];
 		for(int i = 0; i < b.length; i++) b[i] = arr[idx++];
+		
+//		step 3 : magic
 		
 		mergeSort(a);
 		mergeSort(b);
 		
+//		step 4 : Merge 'a' and 'b into arr
 		merge(a,b,arr);
 	}
 	
