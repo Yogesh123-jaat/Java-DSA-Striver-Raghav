@@ -6,7 +6,7 @@ public class QuickSort
 	{
 		int[] arr = {4,6,2,5,7,9,1,3};
 		
-		quickSort(arr , 0 , arr.length - 1);
+		quickSort(arr , 0 , arr.length - 1);   // TC : O(nlogn) SC : O(1)
 		print(arr);
 	}
 	
