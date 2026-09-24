@@ -142,6 +142,29 @@ class Linkedlist
 		if(head == null) tail = null;
 		size--;
 	}
+	
+	void delete(int idx)
+	{
+		if(idx < 0 || idx >= size)
+		{
+			System.out.println("Invalid index");
+		}
+		else if(idx == 0)
+		{
+			deleteAtHead();
+		}
+		else
+		{
+			Node temp = head;
+			for(int i = 0; i < idx-1; i++)
+			{
+				temp = temp.next;
+			}
+			temp.next = temp.next.next;
+			if(idx == size-1) tail = temp;
+			size--;
+		}
+	}
 }
 public class LinkedListDataStructure
 {
@@ -164,5 +187,8 @@ public class LinkedListDataStructure
 		ll.insert(47,2);
 		ll.display();
 		System.out.println(ll.get(2));
+		
+		ll.delete(2);
+		ll.display();
 	}
 }
