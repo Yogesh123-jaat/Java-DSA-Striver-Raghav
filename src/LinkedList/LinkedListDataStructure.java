@@ -94,6 +94,30 @@ class Linkedlist
 //		size++;
 //	}
 	
+	void insert(int val , int idx)
+	{
+		if(idx < 0 || idx > size)
+		{
+			System.out.println("Invalid index...");
+		}
+		else if(idx == 0) addAtHead(val);
+		else if(idx == size) addAtTail(val);
+		else
+		{
+			Node newNode = new Node(val);
+			
+			Node temp = head;
+			for(int i = 0; i < idx - 1; i++)
+			{
+				temp = temp.next;
+			}
+			
+			newNode.next = temp.next;
+			temp.next = newNode;
+			size++;
+		}
+	}
+	
 	void deleteAtHead()
 	{
 		if(head == null)
@@ -123,5 +147,8 @@ public class LinkedListDataStructure
 		ll.display();
 		
 		System.out.println(ll.size);
+		
+		ll.insert(47,2);
+		ll.display();
 	}
 }
