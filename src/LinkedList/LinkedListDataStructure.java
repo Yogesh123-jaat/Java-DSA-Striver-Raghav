@@ -44,21 +44,41 @@ class Linkedlist
 		size++;
 	}
 	
-	boolean search(int val)
+//	boolean search(int val)
+//	{
+//		if(head == null) return false;
+//		
+//		Node temp = head;
+//		while(temp != null)
+//		{
+//			if(temp.val == val)
+//			{
+//				return true;
+//			}
+//			temp = temp.next;
+//		}
+//		
+//		return false;
+//	}
+	
+	int search(int val)
 	{
-		if(head == null) return false;
+		if(head == null) return -1;
+		int idx = 0;
 		
 		Node temp = head;
+		
 		while(temp != null)
 		{
 			if(temp.val == val)
 			{
-				return true;
+				return idx;
 			}
 			temp = temp.next;
+			idx++;
 		}
 		
-		return false;
+		return -1;
 	}
 	
 //	void addAtTail(int val)
