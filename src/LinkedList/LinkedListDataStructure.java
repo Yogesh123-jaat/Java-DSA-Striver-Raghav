@@ -44,6 +44,19 @@ class Linkedlist
 		size++;
 	}
 	
+//	void addAtTail(int val)
+//	{
+//		if(tail == null) 
+//		{
+//			addAtHead(val);
+//			return;
+//		}
+//		Node temp = new Node(val);
+//		tail.next = temp;
+//		tail = temp;
+//		size++;
+//	}
+	
 	void deleteAtHead()
 	{
 		if(head == null)
