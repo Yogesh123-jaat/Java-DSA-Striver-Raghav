@@ -117,6 +117,19 @@ class Linkedlist
 			size++;
 		}
 	}
+
+	int get(int idx)
+	{
+		if(head == null) return -1;
+		Node temp = head;
+		
+		for(int i = 0; i < idx; i++)
+		{
+			temp = temp.next;
+		}
+		
+		return temp.val;
+	}
 	
 	void deleteAtHead()
 	{
@@ -150,5 +163,6 @@ public class LinkedListDataStructure
 		
 		ll.insert(47,2);
 		ll.display();
+		System.out.println(ll.get(2));
 	}
 }
