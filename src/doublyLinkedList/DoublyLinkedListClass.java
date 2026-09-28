@@ -4,6 +4,7 @@ class ListNode
 {
 	ListNode next;
 	ListNode prev;
+	ListNode child;
 	int val;
 	
 	ListNode(int val)
