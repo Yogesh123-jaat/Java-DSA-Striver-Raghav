@@ -10,7 +10,9 @@ public class CountVowels
 		
 		System.out.println("Enter the name : ");
 		String name = sc.nextLine();
+		
 		int count = 0;
+		
 		for(int i = 0; i < name.length(); i++)
 		{
 			char ch = name.charAt(i);
@@ -20,6 +22,6 @@ public class CountVowels
 			}
 		}
 		
-		System.out.println("Vowek count is : " + count);
+		System.out.println("Vowels count is : " + count);
 	}
 }
