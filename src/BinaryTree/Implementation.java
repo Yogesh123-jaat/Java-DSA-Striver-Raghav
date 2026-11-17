@@ -21,7 +21,7 @@ public class Implementation
 		Node d = new Node(-1);
 		Node e = new Node(1);
 		Node f = new Node(6);
-		Node g = new Node(9);
+		Node g = new Node(0);
 		
 		a.left = b; a.right = c;
 		b.left = d; b.right = e;
@@ -32,12 +32,26 @@ public class Implementation
 		System.out.println();
 		System.out.println(size(a));
 		System.out.println(sum(a));
+		System.out.println(product(a));
+		System.out.println(nonZeroProduct(a));
 	}
 	
+	public static int nonZeroProduct(Node root)
+	{
+		if(root == null || root.val == 0) return 1;
+		return root.val * nonZeroProduct(root.left) * nonZeroProduct(root.right);
+	}
 	public static int sum(Node root)
 	{
 		if(root == null) return 0;
 		return root.val + sum(root.left) + sum(root.right);
+	}
+	
+	public static int product(Node root)
+	{
+		if(root == null) return 1;
+		
+		return root.val * product(root.left) * product(root.right);
 	}
 	public static int size(Node root)
 	{
