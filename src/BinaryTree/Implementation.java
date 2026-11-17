@@ -28,8 +28,17 @@ public class Implementation
 		c.left = f; c.right = g;
 		
 		display(a);
+		
+		System.out.println();
+		System.out.println(size(a));
 	}
 	
+	public static int size(Node root)
+	{
+		if(root == null) return 0;
+		
+		return 1 + size(root.left) + size(root.right);
+	}
 	public static void display(Node root)
 	{
 		if(root == null) return;
