@@ -21,7 +21,7 @@ public class Implementation
 		Node d = new Node(-1);
 		Node e = new Node(1);
 		Node f = new Node(6);
-		Node g = new Node(0);
+		Node g = new Node(9);
 		
 		a.left = b; a.right = c;
 		b.left = d; b.right = e;
@@ -34,8 +34,23 @@ public class Implementation
 		System.out.println(sum(a));
 		System.out.println(product(a));
 		System.out.println(nonZeroProduct(a));
+		System.out.println(max(a));
+		System.out.println(min(a));
 	}
 	
+	
+	public static int min(Node root)
+	{
+		if(root == null) return Integer.MAX_VALUE;
+		return Math.min(root.val, Math.min(min(root.left), min(root.right)));
+	}
+	
+	
+	public static int max(Node root)
+	{
+		if(root == null) return Integer.MIN_VALUE;
+		return Math.max(root.val, Math.max(max(root.left), max(root.right)));
+	}
 	public static int nonZeroProduct(Node root)
 	{
 		if(root == null || root.val == 0) return 1;
