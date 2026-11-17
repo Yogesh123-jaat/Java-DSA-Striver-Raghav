@@ -31,8 +31,14 @@ public class Implementation
 		
 		System.out.println();
 		System.out.println(size(a));
+		System.out.println(sum(a));
 	}
 	
+	public static int sum(Node root)
+	{
+		if(root == null) return 0;
+		return root.val + sum(root.left) + sum(root.right);
+	}
 	public static int size(Node root)
 	{
 		if(root == null) return 0;
