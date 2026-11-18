@@ -15,6 +15,7 @@ public class MirrorTreeGFG
 		root.left = root.right;
 		root.right = temp;
 		
+		
 		mirror(root.left);
 		mirror(root.right);
 	}
