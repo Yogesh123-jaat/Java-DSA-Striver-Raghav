@@ -19,4 +19,16 @@ public class MirrorTreeGFG
 		mirror(root.left);
 		mirror(root.right);
 	}
+	
+	public static void mirrorin(Node root)
+	{
+		if(root == null) return;
+		
+		
+		mirrorin(root.left);
+		Node temp = root.left;
+		root.left = root.right;
+		root.right = temp;
+		mirrorin(root.left);
+	}
 }
