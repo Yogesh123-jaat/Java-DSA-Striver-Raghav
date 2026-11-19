@@ -1,5 +1,6 @@
 package BinaryTree;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -60,6 +61,31 @@ public class Implementation
 			System.out.println();
 		}
 	}
+	
+	public ArrayList<ArrayList<Integer>> paths(Node root) 
+    {
+        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+        ArrayList<Integer> arr = new ArrayList<>();
+        
+        dfs(root , arr , ans);
+        return ans;
+    }
+    
+    public void dfs(Node root , ArrayList<Integer> arr , ArrayList<ArrayList<Integer>> ans)
+    {
+        if(root == null) return;
+        arr.add(root.val);
+        if(root.left == null && root.right == null)
+        {
+            ArrayList<Integer> list = new ArrayList<>();
+            list.addAll(arr);
+            ans.add(list);
+        }
+        
+        dfs(root.left , arr , ans);
+        dfs(root.right , arr , ans);
+        arr.remove(arr.size() - 1);
+    }
 	
 	public static void kThLevel(Node root , int level , int k)
 	{
