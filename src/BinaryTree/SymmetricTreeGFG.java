@@ -28,7 +28,7 @@ public class SymmetricTreeGFG
 		 {
 		        if(p == null && q == null) return true;
 		        if(p == null || q == null) return false;
-		        if(p.data != q.data) return false;
+		        if(p.val != q.val) return false;
 		        return isIdentical(p.left , q.left) && isIdentical(p.right , q.right);
 		 }
 }
