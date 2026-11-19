@@ -41,20 +41,33 @@ public class Implementation
 		b.left = d; b.right = e;
 		c.left = f; c.right = g;
 		
-		preorder(a);
+//		preorder(a);
 		
-		System.out.println();
-		System.out.println(size(a));
-		System.out.println(sum(a));
-		System.out.println(product(a));
-		System.out.println(nonZeroProduct(a));
-		System.out.println(max(a));
-		System.out.println(min(a));
-		System.out.println(levels(a));
-		levelOrder(a);
-		levelOrderLineWise(a);
+//		System.out.println();
+//		System.out.println(size(a));
+//		System.out.println(sum(a));
+//		System.out.println(product(a));
+//		System.out.println(nonZeroProduct(a));
+//		System.out.println(max(a));
+//		System.out.println(min(a));
+//		System.out.println(levels(a));
+//		levelOrder(a);
+//		levelOrderLineWise(a);
+		
+		for(int i = 0; i < levels(a); i++)
+		{
+			kThLevel(a,0,i);
+			System.out.println();
+		}
 	}
 	
+	public static void kThLevel(Node root , int level , int k)
+	{
+		if(root == null) return;
+		if(level == k) System.out.print(root.val + " ");
+		kThLevel(root.left , level+1 , k);
+		kThLevel(root.right , level+1 , k);
+	}
 	public static void levelOrderLineWise(Node root)
 	{
 		Queue<Pair> q = new LinkedList<>();

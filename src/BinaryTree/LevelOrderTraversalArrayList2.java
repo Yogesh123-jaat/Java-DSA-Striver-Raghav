@@ -43,7 +43,7 @@ public class LevelOrderTraversalArrayList2
         	Pair front = q.remove();
         	if(front.level != currLevel)
         	{
-        		arr.add(sarr);
+        		arr.add(new ArrayList<>(sarr));
         		sarr.clear();
         		currLevel++;
         	}
@@ -53,7 +53,7 @@ public class LevelOrderTraversalArrayList2
             if(front.node.right != null) q.add(new Pair(front.node.right , front.level+1));
         }
         
-        arr.add(sarr);
+        arr.add(new ArrayList<>(sarr));
         
         return arr;
     }
