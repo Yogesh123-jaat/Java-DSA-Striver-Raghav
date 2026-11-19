@@ -14,6 +14,17 @@ class Node
 		this.val = val;
 	}
 }
+class Pair
+{
+	Node node;
+	int level;
+	
+	Pair(Node node , int level)
+	{
+		this.node = node;
+		this.level = level;
+	}
+}
 public class Implementation 
 {
 	public static void main(String[] args) 
@@ -41,8 +52,30 @@ public class Implementation
 		System.out.println(min(a));
 		System.out.println(levels(a));
 		levelOrder(a);
+		levelOrderLineWise(a);
 	}
 	
+	public static void levelOrderLineWise(Node root)
+	{
+		Queue<Pair> q = new LinkedList<>();
+		q.add(new Pair(root , 0));
+		int currLevel = 0;
+		
+		while(q.size() > 0)
+		{
+			Pair front = q.remove();
+			if(front.level != currLevel)
+			{
+				currLevel++;
+				System.out.println();
+			}
+			System.out.print(front.node.val + " ");
+			if(front.node.left != null) q.add(new Pair(front.node.left , front.level + 1));
+			if(front.node.right != null) q.add(new Pair(front.node.right , front.level + 1));
+		}
+		
+		System.out.println();
+	}
 	public static void levelOrder(Node root)
 	{
 		Queue<Node> q = new LinkedList<>();
